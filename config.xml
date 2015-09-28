@@ -9,6 +9,13 @@
     </author>
   <content src="index.html"/>
   <access origin="*"/>
+  
+  <!-- social media sharing -->
+  <!-- for iOS -->
+  <feature name="SocialSharing">
+    <param name="ios-package" value="SocialSharing" />
+    </feature>
+  
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>

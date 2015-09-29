@@ -16,6 +16,7 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
+    <script src="js/ng-cordova.min.js"></script>
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
@@ -26,13 +27,17 @@
       <ion-header-bar class="bar-dark">
         <h1 class="title">VIP Starter Application</h1>
       </ion-header-bar>
-      <ion-content>
+      <ion-content ng-controller="ExampleController">
         <div>
           <button class="button button-balanced" ng-click="launchSite()">
           Click me!
           </button>
         </div>
-        <p></p>
+        
+	<button class="button" ng-click="shareAnywhere()">Share anywhere</button>
+	<button class="button" ng-click="shareViaTwitter(&apos;some message&apos;,
+	null, &apos;http://blog.nraboy.com&apos;)">Share on Twitter</button>
+
         <button class="button button-assertive" ng-click="launchBuy()">
           Shop now!
         </button>

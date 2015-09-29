@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var example = angular.module('starter', ['ionic', 'ngCordova'])
+var ionicApp = angular.module('starter', ['ionic', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -27,25 +27,25 @@ var example = angular.module('starter', ['ionic', 'ngCordova'])
     }
 });
 
-example.controller("ExampleController", function($scope, $cordovaSocialSharing) {
- 
-     $scope.shareAnywhere = function() {
+ionicApp.controller("ExampleController", function($scope, $cordovaSocialSharing) {
+	$scope.shareAnywhere = function() {
              $cordovaSocialSharing.share("This is your message",
 	     "This is your subject", "www/imagefile.png", "http://blog.nraboy.com");
-	         }
-		  
+	}
+
 	$scope.shareViaTwitter = function() {
     		$cordovaSocialSharing.shareViaTwitter("Check out this cool app I'm using called IonicProject for "
-    		+ device.platform, null, device.platform == "Android" ? "GOOGLE_PLAY_URL" : "ITUNES_URL");
-    		});
+		+ device.platform, null,
+		device.platform == "Android" ? "GOOGLE_PLAY_URL" : "ITUNES_URL");
+	}
 
-	/*$scope.shareViaTwitter = function(message, image, link) {
+	$scope.shareViaTwitter = function(message, image, link) {
 		$cordovaSocialSharing.canShareVia("twitter", message, image, link).then(function(result) {
 			$cordovaSocialSharing.shareViaTwitter(message, image, link);
 		}, function(error) {
 			alert("Cannot share on Twitter");
 		});
-	*/
+	
 	}
 });
 

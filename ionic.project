@@ -1,4 +1,12 @@
 {
-  "name": "VIP",
-  "app_id": "e3f20576"
+  "name": "VIPChristian",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ],
+  "app_id": "f4cb2332"
 }

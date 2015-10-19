@@ -2,28 +2,42 @@
 
   <!-- left menu -->
   <ion-side-menu side="left">
-  <ion-header-bar class="bar-energized">
-    <h1 class="title">Menu</h1>
+  <ion-header-bar class="bar-energized" style="height: 90px">
+    <h1 class="title" style="height: 90px"><img class="title-image" src="http://hopebar.com/wp-content/uploads/2015/04/hopebar-com-logo-new.png" width="123" height="90"></h1>
   </ion-header-bar>
-    <ion-content>
+    <ion-content style="padding-top: 40px">
       <ion-list>
         <ion-item menu-close href="#/app/home">
+          <i class="icon ion-home"></i>
           Home
-        </ion-item>
+          </ion-item>
         <ion-item menu-close href="#/app/shop">
-          Shop!
+          <i class="icon ion-ios-cart"></i>
+          Shop
         </ion-item>
         <ion-item menu-close href="#/app/nourish">
+          <i class="icon ion-heart"></i>
           Nourish Two
         </ion-item>
         <ion-item menu-close href="#/app/bar">
+          <i class="icon ion-information-circled"></i>
           The Bar
         </ion-item>
         <ion-item menu-close href="#/app/plan">
+          <i class="icon ion-calendar"></i>
           Reset Plan
         </ion-item>
         <ion-item menu-close href="#/app/resources">
+          <i class="icon ion-videocamera"></i>
           Resources
+        </ion-item>
+        <ion-item menu-close href="#/app/settings">
+          <i class="icon ion-settings"></i>
+          Settings
+        </ion-item>
+        <ion-item menu-close ng-click="logoutUser()">
+          <i class="icon ion-person"></i>
+          Logout
         </ion-item>
       </ion-list>
     </ion-content>
@@ -38,7 +52,7 @@
       </ion-nav-back-button>
 
       <ion-nav-buttons side="right">
-        <a class="button button-icon icon ion-settings" href="#/app/settings">
+        <a class="button button-icon icon ion-ios-cart-outline" href="#/app/cart">
         </a>
       </ion-nav-buttons>
       <ion-nav-buttons side="left">

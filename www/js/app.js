@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -14,6 +14,14 @@ angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
     }
     if(window.StatusBar) {
       StatusBar.styleDefault();
+    }
+
+    Parse.initialize("VtrWJ7uDOXCBGGn1lweuCnKK8uitk9pXwwqYzw1D", "Qg1P48zW3xx0GyFALPGJD2r6wlL1SUG4guvW5eui");
+    var currentUser = Parse.User.current();
+    if (currentUser) {
+      $state.go('app.home')
+    } else {
+      $state.go('app.login')
     }
   });
 })
@@ -39,12 +47,29 @@ angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
       url: '/login',
       views: {
         'menuContent': {
-          templateUrl: 'HTMLs/login.html'
+          templateUrl: 'HTMLs/login.html',
+          controller: 'LoginCtrl'
         }
       }
 
     })
-
+    .state('app.signup', {
+      url: '/signup',
+      views: {
+        'menuContent': {
+          templateUrl: 'HTMLs/signup.html',
+          controller: 'LoginCtrl'
+        }
+      }
+    })
+    .state('app.cart', {
+      url:'/cart',
+      views: {
+        'menuContent': {
+          templateUrl: 'HTMLs/cart.html'
+        }
+      }
+    })
     .state('app.home', {
       url: '/home',
       views: {
@@ -111,7 +136,7 @@ angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
 
   // if none of the above states are matched, use this as the fallback
 
-  $urlRouterProvider.otherwise('/app/home');
+  //$urlRouterProvider.otherwise('/app/login');
 
 
 });

@@ -1,5 +1,30 @@
-<ion-view view-title="Login">
-  <ion-content>
+<div class="tabs-striped  tabs-background-energized tabs-color-light">
+  <div class="tabs">
+    <a class="tab-item active" href="#/app/login"><i class="icon ion-unlocked"></i> Login</a>
+    <a class="tab-item" href="#/app/signup"> <i class="icon ion-person"></i> Sign Up </a>
+  </div>
+</div>
 
+
+<ion-view title="Sign In">
+  <ion-nav-bar class="bar-energized"></ion-nav-bar>
+  <ion-content padding="true" class="has-header">
+    <form>
+      <ion-list>
+        <label class="item item-input">
+          <span class="input-label">Username</span>
+          <input type="text" placeholder="Enter your username..." ng-model="data.username">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password" placeholder="Enter your password..." ng-model="data.password">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Referral Code</span>
+          <input type="text" placeholder="Enter your 9 character Referral Code" ng-model="data.code">
+        </label>
+      </ion-list>
+      <button class="button ion-unlocked button-block button-balanced" ng-click="loginEmail()"> Login</button>
+    </form>
   </ion-content>
 </ion-view>

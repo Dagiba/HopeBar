@@ -5,7 +5,7 @@ angular.module('esiHopeBar.controllers', [])
 .controller('AppCtrl', function($scope, $state) {
     $scope.logoutUser = function(){
       Parse.User.logOut();
-      $state.go('app.login');
+      $state.go('login');
     };
 
 
@@ -32,7 +32,7 @@ angular.module('esiHopeBar.controllers', [])
           $ionicHistory.nextViewOptions({
             disableBack: true
           });
-          $state.go('app.login');
+          $state.go('login');
         },
         error: function(user, error) {
           // Show the error message somewhere and let the user try again.

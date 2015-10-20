@@ -1,24 +1,25 @@
 <div class="tabs-striped  tabs-background-energized tabs-color-light">
   <div class="tabs">
-    <a class="tab-item " href="#/app/login"><i class="icon ion-unlocked"></i> Login </a>
-    <a class="tab-item active" href="#/app/signup"> <i class="icon ion-person"></i> Sign Up </a>
+    <a class="tab-item " href="#/login"><i class="icon ion-unlocked"></i> Login </a>
+    <a class="tab-item active" href="#/signup"> <i class="icon ion-person"></i> Sign Up </a>
   </div>
 </div>
 
 <ion-view title="Sign up">
   <ion-nav-bar class="bar-energized"></ion-nav-bar>
-  <ion-content padding="true" class="has-header">
-    <form>
+  <ion-content padding="true" class="has-header"style="background-image: url('img/bg-girls.jpg');
+                                                        background-size: 100% 100%;">
+    <form style="margin-top: 30%;">
       <ion-list>
-        <label class="item item-input">
+        <label class="item item-input" style="opacity: 0.6;">
           <span class="input-label">Username</span>
           <input type="text" placeholder="enter username..." ng-model="data.username">
         </label>
-        <label class="item item-input">
+        <label class="item item-input" style="opacity: 0.6;">
           <span class="input-label">Email</span>
           <input type="email" placeholder="you@domain.com" ng-model="data.email">
         </label>
-        <label class="item item-input">
+        <label class="item item-input" style="opacity: 0.6;">
           <span class="input-label">Password</span>
           <input type="password" placeholder="At least 6 characters" ng-model="data.password">
         </label>

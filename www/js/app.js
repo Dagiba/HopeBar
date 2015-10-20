@@ -21,7 +21,7 @@ angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
     if (currentUser) {
       $state.go('app.home')
     } else {
-      $state.go('app.login')
+      $state.go('login')
     }
   });
 })
@@ -43,24 +43,17 @@ angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
       controller: 'AppCtrl'
     })
 
-    .state('app.login', {
+    .state('login', {
       url: '/login',
-      views: {
-        'menuContent': {
-          templateUrl: 'HTMLs/login.html',
-          controller: 'LoginCtrl'
-        }
-      }
+      templateUrl: 'HTMLs/login.html',
+      controller: 'LoginCtrl'
+
 
     })
-    .state('app.signup', {
+    .state('signup', {
       url: '/signup',
-      views: {
-        'menuContent': {
-          templateUrl: 'HTMLs/signup.html',
-          controller: 'LoginCtrl'
-        }
-      }
+      templateUrl: 'HTMLs/signup.html',
+      controller: 'LoginCtrl'
     })
     .state('app.cart', {
       url:'/cart',

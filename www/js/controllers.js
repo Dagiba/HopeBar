@@ -20,7 +20,7 @@ angular.module('esiHopeBar.controllers', [])
     };
 
     $scope.launchSite = function() {
-      window.open('http://www.hopebar.com', '_blank', 'location=yes');
+      window.open('http://www.hopebar.com', '_system', 'location=yes');
     };
     $scope.launchBuy = function() {
       window.open('http://www.hopebar.com/shop/', '_blank', 'location=yes')
@@ -36,12 +36,6 @@ angular.module('esiHopeBar.controllers', [])
     };
 
     $scope.changeReferral = function(){
-      $scope.showAlert("here")
-    };
-    $scope.changeUsername = function() {
-      $scope.showAlert("here")
-    };
-    $scope.changePassword = function()  {
       $scope.showAlert("here")
     };
 

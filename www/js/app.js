@@ -5,7 +5,19 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
 
-.run(function($ionicPlatform, $state) {
+.run(function($ionicPopup, $ionicPlatform, $state) {
+    $ionicPlatform.registerBackButtonAction(function(event) {
+      if (true) { // your check here
+        $ionicPopup.confirm({
+          title: 'System warning',
+          template: 'are you sure you want to exit?'
+        }).then(function(res) {
+          if (res) {
+            ionic.Platform.exitApp();
+          }
+        })
+      }
+    }, 100);
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -24,6 +36,7 @@ angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
       $state.go('login')
     }
   });
+
 })
 
 
@@ -39,12 +52,14 @@ angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
     .state('app', {
       url: '/app',
       abstract: true,
+      cache: false,
       templateUrl: 'HTMLs/menu.html',
       controller: 'AppCtrl'
     })
 
     .state('login', {
       url: '/login',
+      cache: false,
       templateUrl: 'HTMLs/login.html',
       controller: 'LoginCtrl'
 
@@ -65,6 +80,7 @@ angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
     })
     .state('app.home', {
       url: '/home',
+      cache: false,
       views: {
         'menuContent':{
           templateUrl: 'HTMLs/home.html'
@@ -112,7 +128,8 @@ angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
       url: '/settings',
       views: {
         'menuContent': {
-          templateUrl: 'HTMLs/settings.html'
+          templateUrl: 'HTMLs/settings.html',
+          controller: 'AppCtrl'
         }
       }
     })

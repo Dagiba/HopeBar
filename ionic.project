@@ -1,5 +1,5 @@
 {
-  "name": "VIPChristian",
+  "name": "myApp",
   "gulpStartupTasks": [
     "sass",
     "watch"
@@ -8,5 +8,5 @@
     "www/**/*",
     "!www/lib/**/*"
   ],
-  "app_id": "f4cb2332"
+  "app_id": "cf0467b6"
 }

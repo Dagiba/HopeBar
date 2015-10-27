@@ -3,11 +3,9 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var ionicApp = angular.module('starter', ['ionic', 'ngCordova'])
-var example = angular.module('starter', ['ionic', 'ngCordova'])
-var db = null;
+angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -17,113 +15,121 @@ var db = null;
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-	db = $cordovaSQLite.openDB({ name."my.db"});
-	$cordovaSQLite.execute(db, "create table if doesn't exist");
+
+    Parse.initialize("VtrWJ7uDOXCBGGn1lweuCnKK8uitk9pXwwqYzw1D", "Qg1P48zW3xx0GyFALPGJD2r6wlL1SUG4guvW5eui");
+    var currentUser = Parse.User.current();
+    if (currentUser) {
+      $state.go('app.home')
+    } else {
+      $state.go('login')
+    }
   });
+})
+
+
+.config(function($stateProvider, $urlRouterProvider) {
+
+  // Ionic uses AngularUI Router which uses the concept of states
+  // Learn more here: https://github.com/angular-ui/ui-router
+  // Set up the various states which the app can be in.
+  // Each state's controller can be found in controllers.js
+  $stateProvider
+
+
+    .state('app', {
+      url: '/app',
+      abstract: true,
+      templateUrl: 'HTMLs/menu.html',
+      controller: 'AppCtrl'
+    })
+
+    .state('login', {
+      url: '/login',
+      templateUrl: 'HTMLs/login.html',
+      controller: 'LoginCtrl'
+
+
+    })
+    .state('signup', {
+      url: '/signup',
+      templateUrl: 'HTMLs/signup.html',
+      controller: 'LoginCtrl'
+    })
+    .state('app.cart', {
+      url:'/cart',
+      views: {
+        'menuContent': {
+          templateUrl: 'HTMLs/cart.html'
+        }
+      }
+    })
+    .state('app.home', {
+      url: '/home',
+      views: {
+        'menuContent':{
+          templateUrl: 'HTMLs/home.html'
+        }
+      }
+    })
+
+    .state('app.bar', {
+      url: '/bar',
+      views: {
+        'menuContent': {
+          templateUrl: 'HTMLs/bar.html'
+        }
+      }
+    })
+
+    .state('app.nourish', {
+      url: '/nourish',
+      views: {
+        'menuContent': {
+          templateUrl: 'HTMLs/nourish.html'
+        }
+      }
+    })
+
+    .state('app.plan', {
+      url: '/plan',
+      views: {
+        'menuContent': {
+          templateUrl: 'HTMLs/plan.html'
+        }
+      }
+    })
+
+    .state('app.resources', {
+      url: '/resources',
+        views: {
+          'menuContent': {
+            templateUrl: 'HTMLs/resources.html'
+          }
+        }
+    })
+
+    .state('app.settings', {
+      url: '/settings',
+      views: {
+        'menuContent': {
+          templateUrl: 'HTMLs/settings.html'
+        }
+      }
+    })
+
+    .state('app.shop', {
+      url: '/shop',
+      views: {
+        'menuContent': {
+          templateUrl: 'HTMLs/shop.html'
+        }
+      }
+    })
+  ;
+
+  // if none of the above states are matched, use this as the fallback
+
+  //$urlRouterProvider.otherwise('/app/login');
+
+
 });
- 
-
-example.controller("ExampleController", function($scope, $cordovaSQLite) {
- 
-    $scope.insert = function(firstname, lastname) {
-        var query = "INSERT INTO people (firstname, lastname) VALUES (?,?)";
-        $cordovaSQLite.execute(db, query, [firstname, lastname]).then(function(res) {
-            console.log("INSERT ID -> " + res.insertId);
-        }, function (err) {
-            console.error(err);
-        });
-    }
- 
-    $scope.select = function(lastname) {
-        var query = "SELECT firstname, lastname FROM people WHERE lastname = ?";
-        $cordovaSQLite.execute(db, query, [lastname]).then(function(res) {
-            if(res.rows.length > 0) {
-                console.log("SELECTED -> " + res.rows.item(0).firstname + " " + res.rows.item(0).lastname);
-            } else {
-                console.log("No results found");
-            }
-        }, function (err) {
-            console.error(err);
-        });
-    }
- 
-});
-
-.controller('DashCtrl',function($scope) {
-  $scope.launchSite = function() {
-    window.open('http://www.hopebar.com', '_system', 'location=yes');
-  };
-    $scope.launchBuy = function() {
-      window.open('http://www.hopebar.com/shop/', '_system', 'location=yes')
-    }
-});
-ionicApp.controller('MyCtrl', function($scope, $cordovaSocialSharing) {
-
-  $cordovaSocialSharing
-    .share(message, subject, file, link) // Share via native share sheet
-    .then(function(result) {
-      // Success!
-    }, function(err) {
-      // An error occured. Show a message to the user
-    });
-
-  $cordovaSocialSharing
-    .shareViaTwitter(message, image, link)
-    .then(function(result) {
-      // Success!
-    }, function(err) {
-      // An error occurred. Show a message to the user
-    });
-
-  $cordovaSocialSharing
-    .shareViaWhatsApp(message, image, link)
-    .then(function(result) {
-      // Success!
-    }, function(err) {
-      // An error occurred. Show a message to the user
-    });
-
-  $cordovaSocialSharing
-    .shareViaFacebook(message, image, link)
-    .then(function(result) {
-      // Success!
-    }, function(err) {
-      // An error occurred. Show a message to the user
-    });
-
-  // access multiple numbers in a string like: '0612345678,0687654321'
-  $cordovaSocialSharing
-    .shareViaSMS(message, number)
-    .then(function(result) {
-      // Success!
-    }, function(err) {
-      // An error occurred. Show a message to the user
-    });
-
-// toArr, ccArr and bccArr must be an array, file can be either null, string or array
-  $cordovaSocialSharing
-    .shareViaEmail(message, subject, toArr, ccArr, bccArr, file)
-    .then(function(result) {
-      // Success!
-    }, function(err) {
-      // An error occurred. Show a message to the user
-    });
-
-  $cordovaSocialSharing
-    .canShareVia(socialType, message, image, link)
-    .then(function(result) {
-      // Success!
-    }, function(err) {
-      // An error occurred. Show a message to the user
-    });
-
-  $cordovaSocialSharing
-    .canShareViaEmail()
-    .then(function(result) {
-      // Yes we can
-    }, function(err) {
-      // Nope
-    });
-});
-
-

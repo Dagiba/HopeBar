@@ -20,7 +20,7 @@ angular.module('esiHopeBar.controllers', [])
     };
 
     $scope.launchSite = function() {
-      window.open('http://www.hopebar.com', '_system', 'location=yes');
+      window.open('http://www.hopebar.com', '_blank', 'location=yes');
     };
     $scope.launchBuy = function() {
       window.open('http://www.hopebar.com/shop/', '_blank', 'location=yes')

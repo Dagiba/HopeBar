@@ -64,7 +64,7 @@ angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
       }
     })
     .state('app.home', {
-      url: 'http://hopebar.com/',
+      url: '/home',
       views: {
         'menuContent':{
           templateUrl: 'HTMLs/home.html'

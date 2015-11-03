@@ -1,5 +1,44 @@
 <ion-view view-title="Settings">
   <ion-content>
+    <ion-list>
 
+      <ion-item>
+        <a class="item item-icon-left" style="border: none;" ng-click="changeReferral()">
+          <i class="icon ion-edit"></i>
+          Change Referral Code
+          <span class="item-note">
+            Placeholder
+          </span>
+        </a>
+      </ion-item>
+
+      <ion-item>
+        <a class="item item-icon-left" style="border: none;" ng-click="changeUsername()">
+          <i class="icon ion-person"></i>
+          Change Username
+          <span class="item-note">
+            Placeholder
+          </span>
+        </a>
+      </ion-item>
+
+      <ion-item>
+        <a class="item item-icon-left" style="border: none;" ng-click="changePassword()">
+          <i class="icon ion-person"></i>
+          Change Password
+        </a>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>
+
+<script id="my-popover.html" type="text/ng-template">
+  <ion-popover-view>
+    <ion-header-bar>
+      <h1 class="title">My Popover Title</h1>
+    </ion-header-bar>
+    <ion-content>
+      Hello!
+    </ion-content>
+  </ion-popover-view>
+</script>

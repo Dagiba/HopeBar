@@ -5,13 +5,13 @@
   <ion-header-bar class="bar-energized" style="height: 90px">
     <h1 class="title" style="height: 90px"><img class="title-image" src="http://hopebar.com/wp-content/uploads/2015/04/hopebar-com-logo-new.png" width="123" height="90"></h1>
   </ion-header-bar>
-    <ion-content style="padding-top: 40px">
+    <ion-content style="padding-top: 15%">
       <ion-list>
         <ion-item menu-close href="#/app/home">
           <i class="icon ion-home"></i>
           Home
           </ion-item>
-        <ion-item menu-close href="#/app/shop">
+        <ion-item menu-close ng-click="launchBuy()">
           <i class="icon ion-ios-cart"></i>
           Shop
         </ion-item>
@@ -29,7 +29,7 @@
         </ion-item>
         <ion-item menu-close href="#/app/resources">
           <i class="icon ion-videocamera"></i>
-          Resources
+          Videos
         </ion-item>
         <ion-item menu-close href="#/app/settings">
           <i class="icon ion-settings"></i>
@@ -46,7 +46,7 @@
 
 
   <!-- Main Content, usually <ion-nav-view> -->
-  <ion-side-menu-content>
+  <ion-side-menu-content edge-drag-threshold="true">
     <ion-nav-bar class="bar-energized">
       <ion-nav-back-button>
       </ion-nav-back-button>
@@ -62,8 +62,6 @@
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
   </ion-side-menu-content>
-
-
 
 
 </ion-side-menus>

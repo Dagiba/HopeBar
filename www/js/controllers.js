@@ -38,6 +38,12 @@ angular.module('esiHopeBar.controllers', [])
     $scope.changeReferral = function(){
       $scope.showAlert("here")
     };
+    $scope.changeUsername = function() {
+      $scope.showAlert("here")
+    };
+    $scope.changePassword = function()  {
+      $scope.showAlert("here")
+    };
 
     $scope.showAlert = function(msg) {
       var alertPopup = $ionicPopup.alert({

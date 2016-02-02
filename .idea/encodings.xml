@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/scss/ionic.app.scss" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/www/HTMLs/bar.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/HTMLs/home.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/www/HTMLs/login.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/www/HTMLs/menu.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/www/HTMLs/nourish.html" charset="UTF-8" />
@@ -11,7 +12,9 @@
     <file url="file://$PROJECT_DIR$/www/HTMLs/settings.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/www/HTMLs/shop.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/www/HTMLs/signup.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/css/style.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/www/js/app.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/www/js/controllers.js" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

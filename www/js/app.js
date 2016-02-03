@@ -107,20 +107,20 @@ angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
       }
     })
 
-    .state('app.plan', {
-      url: '/plan',
+    .state('app.barNutrition', {
+      url: '/barNutrition',
       views: {
         'menuContent': {
-          templateUrl: 'HTMLs/plan.html'
+          templateUrl: 'HTMLs/barNutrition.html'
         }
       }
     })
 
-    .state('app.resources', {
-      url: '/resources',
+    .state('app.barInfo', {
+      url: '/barInfo',
         views: {
           'menuContent': {
-            templateUrl: 'HTMLs/resources.html'
+            templateUrl: 'HTMLs/barInfo.html'
           }
         }
     })
@@ -134,7 +134,14 @@ angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
         }
       }
     })
-
+    .state('app.barReviews', {
+      url: '/barReviews',
+      views: {
+        'menuContent': {
+          templateUrl: 'HTMLs/barReviews.html'
+        }
+      }
+  })
     .state('app.shop', {
       url: '/shop',
       views: {

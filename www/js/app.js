@@ -7,15 +7,6 @@ angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
 
 .run(function($ionicPopup, $ionicPlatform, $state) {
   $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-
     $state.go('app.home');
   });
 
@@ -135,7 +126,7 @@ angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
 
   // if none of the above states are matched, use this as the fallback
 
-  //$urlRouterProvider.otherwise('/app/login');
+  $urlRouterProvider.otherwise('/home');
 
 
 });

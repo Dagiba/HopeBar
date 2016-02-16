@@ -6,18 +6,6 @@
 angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
 
 .run(function($ionicPopup, $ionicPlatform, $state) {
-    $ionicPlatform.registerBackButtonAction(function(event) {
-      if (true) { // your check here
-        $ionicPopup.confirm({
-          title: 'System warning',
-          template: 'are you sure you want to exit?'
-        }).then(function(res) {
-          if (res) {
-            ionic.Platform.exitApp();
-          }
-        })
-      }
-    }, 100);
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)

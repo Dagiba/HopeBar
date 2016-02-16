@@ -28,13 +28,6 @@ angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
       StatusBar.styleDefault();
     }
 
-    Parse.initialize("VtrWJ7uDOXCBGGn1lweuCnKK8uitk9pXwwqYzw1D", "Qg1P48zW3xx0GyFALPGJD2r6wlL1SUG4guvW5eui");
-    var currentUser = Parse.User.current();
-    /*if (currentUser) {
-      $state.go('app.home')
-    } else {
-      $state.go('login')
-    }*/
     $state.go('app.home');
   });
 

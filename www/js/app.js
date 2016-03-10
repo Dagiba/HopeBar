@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
+angular.module('esiHopeBar', ['ionic', 'ngCordova', 'esiHopeBar.controllers'])
 
 .run(function($ionicPopup, $ionicPlatform, $state) {
   $ionicPlatform.ready(function() {
@@ -12,6 +12,12 @@ angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
 
 })
 
+.controller("ExampleController", function($scope, $cordovaSocialSharing) {
+	
+	$scope.shareAnywhere = function() {
+		$cordovaSocialSharing.share("share msg", "title for share", null, "https://hopebar.com")
+	}
+})
 
 .config(function($stateProvider, $urlRouterProvider) {
 

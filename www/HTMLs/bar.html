@@ -1,5 +1,5 @@
 <ion-view view-title="The Bar">
-  <ion-content>
+  <ion-content ng-controller="ExampleController">
     <ion-list>
       <ion-item style="height: 50%">
         <div class="card">
@@ -10,6 +10,8 @@
         <a href="#/app/barNutrition" class="button button-energized">
           Nutritional Info
         </a>
+		
+		<button class="button" ng-click="shareAnywhere()">Share anywhere</button>
         <!--<a  class="button button-balanced" style="position: relative;
                                                     margin-left: 150px;
                                                     padding-right: 50px;

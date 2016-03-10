@@ -1,5 +1,5 @@
 {
-  "name": "Master",
+  "name": "myApp",
   "gulpStartupTasks": [
     "sass",
     "watch"
@@ -8,5 +8,5 @@
     "www/**/*",
     "!www/lib/**/*"
   ],
-  "app_id": "1c18fd56"
+  "app_id": "CF0467B6"
 }

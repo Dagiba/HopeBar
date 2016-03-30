@@ -116,9 +116,11 @@ angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
   })
     .state('app.videos', {
       url: '/videos',
+      cache: false,
       views: {
         'menuContent': {
-          templateUrl: 'HTMLs/resources.html'
+          templateUrl: 'HTMLs/resources.html',
+
         }
       }
     })

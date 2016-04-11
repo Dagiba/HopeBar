@@ -8,6 +8,12 @@ angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
 .run(function($ionicPopup, $ionicPlatform, $state) {
   $ionicPlatform.ready(function() {
     $state.go('app.home');
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    //document.addEventListener("pause", (), false);
+    //document.addEventListener("resume", false);
   });
 
 })
@@ -120,6 +126,7 @@ angular.module('esiHopeBar', ['ionic', 'esiHopeBar.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'HTMLs/resources.html',
+          controller: 'revControl'
 
         }
       }

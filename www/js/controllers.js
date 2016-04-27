@@ -1,10 +1,14 @@
 /**
  * Created by chris_000 on 10/2/2015.
+ * Controllers that dictates the navigation of the interaction with each function, 
+ * or how the app should respond when provided with input from user
  */
 angular.module('esiHopeBar.controllers', [])
 .controller('AppCtrl', function($scope, $state, $ionicHistory, $ionicPopup, $ionicPlatform) {
 
-
+/**
+ * Windows/pages that open based on the certain buttons are pressed
+ */
     $scope.launchSite = function() {
       window.open('http://www.hopebar.com', '_blank', 'location=yes');
     };
@@ -49,7 +53,9 @@ angular.module('esiHopeBar.controllers', [])
 
 
   })
-
+/**
+ * Pop up message that will alert for invalid logins.
+ */
 .controller('LoginCtrl', function($scope, $state, $ionicPopup, $location, $ionicHistory) {
     $scope.data = {};
     $scope.showAlert = function(msg) {
@@ -64,6 +70,9 @@ angular.module('esiHopeBar.controllers', [])
 
 })
 
+/**
+ * Youtube popup frame setup
+ */
 .controller('revControl',function($scope, $state, $ionicPlatform, $ionicHistory, $ionicPopup) {
   var players = {};
   var iframes = document.getElementsByTagName("iframe");
